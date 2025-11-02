@@ -183,22 +183,3 @@ h1 {
 .card:last-child li {
     margin-bottom: 0.5em;
 }
-
-/* --- 🦶 Footer Styling --- */
-footer {
-    background-color: var(--primary-dark-blue);
-    color: var(--light-text);
-    text-align: center;
-    padding: 1rem;
-    font-size: 0.9em;
-    margin-top: auto;
-    border-top: 4px solid var(--secondary-light-blue); /* Subtle border */
-}
-
-footer p {
-    margin: 0;
-    line-height: 1.2;
-}
-
-/* --- 📱 Media Queries (Responsiveness) --- */
-@media (max-
