@@ -1,0 +1,204 @@
+/* --- Global Variables and Reset --- */
+:root {
+    /* Colors inspired by your image's dark header and card titles */
+    --primary-dark-blue: #1c4566; 
+    --secondary-light-blue: #3f6e91;
+    --background-light: #f4f7f6;
+    --card-border-color: #ddd;
+    --dark-text: #333;
+    --light-text: #fff;
+    --link-color: #1e719c; /* A medium blue for links */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--dark-text);
+    background-color: var(--background-light);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+/* --- 🧭 Header and Navigation (Dark Blue) --- */
+header {
+    background-color: var(--primary-dark-blue);
+    color: var(--light-text);
+    padding: 1rem 2rem 0; /* Less padding at the bottom to pull the nav closer */
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+#course-title {
+    font-size: 1.5em;
+    font-weight: normal;
+    padding-bottom: 0.5rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center; /* Center the navigation links */
+    gap: 0; /* Remove gap between li elements */
+    width: 100%;
+}
+
+nav li {
+    flex-grow: 1; /* Make list items take equal width */
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-right: 1px solid rgba(255, 255, 255, 0.1); /* Separator lines */
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav a {
+    color: var(--light-text);
+    padding: 0.75rem 0; /* Padding inside the nav links */
+    display: block; /* Make the link fill the whole li area */
+    background-color: var(--secondary-light-blue); /* Lighter blue for the nav bar */
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: var(--primary-dark-blue);
+    text-decoration: none;
+}
+
+
+/* --- 🖼️ Main Content Grid Layout --- */
+main {
+    flex-grow: 1;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+    
+    /* Use CSS Grid for the two main columns (the cards) */
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* About Me is 2 parts, Resources is 1 part */
+    gap: 15px; /* Space between the cards */
+}
+
+h1 {
+    /* Hide the main H1 as it seems to be incorporated into the header title */
+    display: none; 
+}
+
+/* --- 💳 Card Styling --- */
+.card {
+    background-color: #fff;
+    border: 1px solid var(--card-border-color);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 0; /* Remove padding from the card wrapper itself */
+    overflow: hidden; /* Contains the image and title background */
+}
+
+/* Card Header (Dark Blue background for "About Me" and "Web Dev Resources") */
+.card h2 {
+    background-color: var(--primary-dark-blue);
+    color: var(--light-text);
+    padding: 1rem;
+    margin: 0; /* Remove default margin on H2 */
+    font-weight: normal;
+    text-align: center;
+}
+
+/* Inner content padding */
+.card-content {
+    padding: 1.5rem;
+}
+
+/* --- Card 1: About Me Layout (Inner Flex/Grid) --- */
+.card:first-child .card-content {
+    display: flex; /* Use flexbox for the internal layout of text and image */
+    gap: 1.5rem;
+}
+
+.about-text {
+    flex: 2; /* Text takes up 2/3 of the space */
+}
+
+.profile-image-container {
+    flex: 1; /* Image takes up 1/3 of the space */
+    text-align: center;
+}
+
+.card img[alt*="profile image"] {
+    width: 100%;
+    max-width: 150px; /* Constrain image size */
+    height: auto;
+    border: 1px solid var(--card-border-color);
+    border-radius: 3px;
+    margin-bottom: 1em;
+    float:left
+  
+
+
+/* Styling for the Flag section */
+.flag-section {
+    padding-top: 1rem;
+    border-top: 1px solid var(--card-border-color);
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.flag-section img {
+    max-width: 120px;
+    height: auto;
+    border: 1px solid #000;
+}
+
+/* --- Card 2: Resources List --- */
+.card:last-child ul {
+    list-style-type: disc;
+    padding-left: 1.5em; /* Default bullet point indentation */
+}
+
+.card:last-child li {
+    margin-bottom: 0.5em;
+}
+
+/* --- 🦶 Footer Styling --- */
+footer {
+    background-color: var(--primary-dark-blue);
+    color: var(--light-text);
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9em;
+    margin-top: auto;
+    border-top: 4px solid var(--secondary-light-blue); /* Subtle border */
+}
+
+footer p {
+    margin: 0;
+    line-height: 1.2;
+}
+
+/* --- 📱 Media Queries (Responsiveness) --- */
+@media (max-
