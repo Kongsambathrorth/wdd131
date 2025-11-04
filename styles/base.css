@@ -80,12 +80,14 @@ a {
 /* Main Content Area */
 main {
     padding: 32px; 
+    display: flex;
+    flex-direction: row;
 }
 
 .main-content-grid {
     display:fleX;
     flex-wrap: wrap; 
-    gap: 32px; 
+    gap: 32px;
 }
 
 .left-column {
@@ -94,11 +96,13 @@ main {
     display: flex;
     flex-direction: column;
     gap: 32px; 
+    background-color: #dcd8d8;
 }
 
 .right-column {
     flex: 1; 
-    min-width: 250px;
+    min-width: 400px;
+    min-height: 500px;
 }
 
 /* Reusable Card Component */
@@ -119,7 +123,10 @@ main {
 }
 
 .card-body {
-    padding: 24px; 
+    padding: 12px; 
+    min-width: 100px;
+    min-height: 100px;
+    
 }
 
 /* About Me Card */
