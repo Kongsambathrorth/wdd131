@@ -27,13 +27,14 @@ ul {
 
 a {
     text-decoration: none;
+    color: ivory;
 }
 
 /* Main Page Structure */
-#page-container {
+.page-container {
     max-width: 1280px; 
     margin: 0 auto;
-    background-color: #ffffff;
+    background-color: #dcd2d2;
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); 
     min-height: 100vh;
     display: grid;
@@ -42,8 +43,8 @@ a {
 /* Header */
 .site-header {
     background-color: #1e293b; 
-    color: #ffffff;
-    padding: 24px;
+    color: #2c2828;
+    padding: 1px;
     text-align: center;
 }
 
@@ -54,7 +55,7 @@ a {
 
 /* Navigation */
 .main-nav {
-    background-color: #f3f4f6; 
+    background-color: #3f4042; 
     border-top: 1px solid #d1d5db; 
     border-bottom: 1px solid #d1d5db;
 }
@@ -64,13 +65,13 @@ a {
     justify-content: center;
     align-items: center;
     list-style-type: none;
-    padding: 16px;
+    padding: 10px;
     gap: 40px; 
 }
 
 .main-nav a {
     color: #374151; 
-    font-weight: 500;
+    font-weight: 300;
     font-size: 1rem;
 }
 
@@ -80,7 +81,7 @@ a {
 
 /* Main Content Area */
 main {
-    padding: 32px; 
+    padding: 1px; 
     display: flex;
     flex-direction: row;
 }
@@ -88,7 +89,7 @@ main {
 .main-content-grid {
     display:grid;
     flex-wrap: wrap; 
-    gap: 32px;
+    gap: 3px;
 }
 
 .left-column {
@@ -96,7 +97,7 @@ main {
     min-width: 300px;
     display: flex;
     flex-direction: column;
-    gap: 32px; 
+    gap: 3px; 
     background-color: #dcd8d8;
 }
 
@@ -252,20 +253,20 @@ main {
 .site-footer {
     background-color: #1e293b;
     color: #d1d5db; 
-    padding: 24px; 
+    padding: 1px; 
     text-align: center;
-    margin-top: 32px; 
+    margin-top: 4px; 
     border-top: 4px solid #3b82f6; 
 }
 
 .site-footer p {
     font-size: 0.875rem;
-    margin: 0;
+    margin: auto;
 }
 
 .site-footer .last-modification {
     font-size: 0.75rem; 
     color: #9ca3af; 
-    margin-top: 8px; 
+    margin-top: 4px; 
 }
 
