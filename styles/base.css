@@ -1,4 +1,4 @@
-/* General Resets and Body Styling */
+/* General Resets */
 * {
     box-sizing: border-box;
 }
@@ -6,267 +6,95 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif; 
+    font-family: 'Roboto', Arial, sans-serif; 
     background-color: #f3f4f6; 
-    color: #374151; 
-}
-
-h1, h2, h3, h4, h5, h6 {
-    margin: 0;
-}
-
-p {
-    line-height: 1.6;
-    margin: 0;
-}
-
-ul {
-    margin: 0;
-    padding: 0;
-}
-
-a {
-    text-decoration: none;
-    color: ivory;
-}
-
-/* Main Page Structure */
-.page-container {
-    max-width: 1280px; 
+    color: #374151;
+    max-width: 1280px;
     margin: 0 auto;
-    background-color: #dcd2d2;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); 
-    min-height: 100vh;
-    display: grid;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
 }
 
-/* Header */
-.site-header {
+/* Header & Nav */
+header {
     background-color: #1e293b; 
-    color: #2c2828;
-    padding: 1px;
+    color: white;
+    padding: 1rem;
     text-align: center;
 }
 
-.site-header h1 {
-    font-size: 1.875rem; 
-    font-weight: 700;
+nav {
+    background-color: #3f4042;
+    padding: 0.5rem;
 }
 
-/* Navigation */
-.main-nav {
-    background-color: #3f4042; 
-    border-top: 1px solid #d1d5db; 
-    border-bottom: 1px solid #d1d5db;
-}
-
-.main-nav ul {
-    display: flex;
+nav ul {
+    display: flex; /* Required Flexbox usage */
     justify-content: center;
-    align-items: center;
     list-style-type: none;
-    padding: 10px;
-    gap: 40px; 
+    gap: 30px;
+    padding: 0;
 }
 
-.main-nav a {
-   
-    font-weight: 300;
-    font-size: 1rem;
+nav a {
+    color: ivory;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-.main-nav a:hover {
-    color: #ffffff; 
+nav a:hover {
+    color: #3b82f6;
+    text-decoration: underline;
 }
 
-/* Main Content Area */
+/* Main Layout */
 main {
-    padding: 1px; 
-    display: flex;
-    flex-direction: row;
+    display: grid; /* Required Grid usage */
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    padding: 20px;
 }
 
 .main-content-grid {
-    display:grid;
-    flex-wrap: wrap; 
-    gap: 3px;
-}
-
-.left-column {
-    flex: 2; 
-    min-width: 300px;
     display: flex;
     flex-direction: column;
-    gap: 3px; 
-    background-color: #dcd8d8;
+    gap: 20px;
 }
 
-.right-column {
-    flex: 1; 
-    min-width: 400px;
-    min-height: 500px;
-}
-
-/* Reusable Card Component */
+/* Cards */
 .card {
     background-color: #fff;
-    border-radius: 8px; /* rounded-lg */
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); 
-    border: 1px solid #e5e7eb; 
-    overflow: hidden; 
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 .card-header {
     background-color: #334155;
     color: white;
-    font-size: 1.5rem; 
-    font-weight: 600; 
-    padding: 16px; 
+    padding: 1rem;
+    margin: 0;
 }
 
 .card-body {
-    padding: 12px; 
-    min-width: 100px;
-    min-height: 100px;
-    
-}
-
-/* About Me Card */
-.about-me-content {
-    display: flex;
-    flex-wrap: wrap; 
-    gap: 24px; 
-    align-items: flex-start;
-}
-
-.about-me-text {
-    flex: 2; 
-    min-width: 250px;
-}
-
-.about-me-image {
-    flex: 1; 
-    max-width: 250px;
-    margin: 0 auto;
-}
-
-.about-me-image img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 8px; 
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); 
-}
-
-/* Cambodia Card */
-.cambodia-title {
-    font-size: 1.5rem; 
-    font-weight: 600; 
-    text-align: center;
-    color: #334155; 
-    margin-bottom: 24px; 
-}
-
-.cambodia-content {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 24px; /* gap-6 */
-    align-items: flex-start;
-}
-
-.flag-container {
-    flex-shrink: 0;
-    width: 192px; /* w-48 */
-    text-align: center;
-    margin: 0 auto; 
-}
-
-.flag {
-    width: 192px; /* w-48 */
-    height: 128px; /* h-32 */
-    border: 1px solid #9ca3af; 
-    display: flex;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); 
-    margin: 0 auto;
-}
-
-.flag-white {
-    width: 33.33%;
-    height: 100%;
-    background-color: white;
-}
-
-.flag-colors {
-    width: 66.67%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.flag-red {
-    height: 50%;
-    width: 100%;
-    background-color: #DE3831;
-}
-
-.flag-green {
-    height: 50%;
-    width: 100%;
-    background-color: #007E3A;
-}
-
-.flag-caption {
-    font-size: 0.875rem; 
-    color: #4b5563;
-    margin-top: 8px; 
-    font-style: italic;
-}
-
-.cambodia-text {
-    flex: 1;
-    min-width: 250px;
-}
-
-/* Web Dev Resources Card */
-.resources-list {
-    list-style-type: disc;
-    list-style-position: inside;
-}
-
-.resources-list li {
-    margin-bottom: 12px; 
-}
-
-.resources-list li:last-child {
-    margin-bottom: 0;
-}
-
-.resources-list a {
-    color: #2563eb; 
-}
-
-.resources-list a:hover {
-    text-decoration: underline;
+    padding: 1.5rem;
 }
 
 /* Footer */
-.site-footer {
+footer {
     background-color: #1e293b;
-    color: #d1d5db; 
-    padding: 1px; 
+    color: #d1d5db;
     text-align: center;
-    margin-top: 4px; 
-    border-top: 4px solid #3b82f6; 
+    padding: 2rem;
+    border-top: 4px solid #3b82f6;
 }
 
-.site-footer p {
-    font-size: 0.875rem;
-    margin: auto;
+footer p {
+    margin: 5px 0;
 }
 
-.site-footer .last-modification {
-    font-size: 0.75rem; 
-    color: #9ca3af; 
-    margin-top: 4px; 
+/* Responsive adjustments */
+@media (max-width: 800px) {
+    main {
+        grid-template-columns: 1fr;
+    }
 }
-
