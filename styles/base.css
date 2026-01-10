@@ -70,13 +70,13 @@ a {
 }
 
 .main-nav a {
-    color: #374151; 
+   
     font-weight: 300;
     font-size: 1rem;
 }
 
 .main-nav a:hover {
-    color: #2563eb; 
+    color: #ffffff; 
 }
 
 /* Main Content Area */
