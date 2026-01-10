@@ -3,76 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WDD 131: Dynamic Web Fundamentals - Sambathrorth</title>
-    <meta name="description" content="Course assignment for WDD131 – Dynamic Web Fundamentals.">
+    <title>WDD 131- Dynamic Web Fundamentals- Sambathrorth</title>
+    <meta name="description" content="This website is a work of course: WDD131 – Dynamic Web Fundamentals assignment for Sambathrorth Kong. The site content is about Dynamic Web Fundamentals.">
     <meta name="author" content="Sambathrorth">
-    
     <link rel="stylesheet" href="styles/base.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="fonts.googleapis.com" rel="stylesheet">
-</head>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
 <body>
+
+    <!-- Main Page Container -->
     <div id="page-container">
+
+        <!-- Header -->
         <header class="site-header">
-           
-            <h1><span id="course-title">WDD 131: Dynamic Web Fundamentals</span></h1>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="https://linkedin.com">LinkedIn</a></li>
-                    <li><a href="#">Canvas</a></li>
-                    <li><a href="#">Scripture</a></li>
-                    <li><a href="#">Final Project</a></li>
-                </ul>
-            </nav>
+            <h1>WDD 131: Dynamic Web Fundamentals - Sambathrorth Kong</h1>
+             <!-- Navigation -->
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#">LinkedIn</a></li>
+                <li><a href="#">Canvas</a></li>
+                <li><a href="#">Scripture</a></li>
+                <li><a href="#">Final Project</a></li>
+            </ul>
+        </nav>
+
         </header>
 
+       
+        <!-- Main Content Area -->
         <main>
+            <!-- Responsive Grid Layout -->
             <div class="main-content-grid">
-                <section class="card">
-                    <h2 class="card-header">About Me</h2>
-                    <div class="card-body about-me-content">
-                        <p>My name is Sambathrorth. I live in Cambodia. I work for an NGO as a Program Manager. I am married and have two daughters.</p>
-                       
-                        <div class="about-me-image">
-                            <img src="images/sambathrorth.webp" alt="Portrait of Sambathrorth" width="250">
-                        </div>
-                    </div>
-                </section>
 
-                <section class="card">
-                    <h2 class="card-header">My Country</h2>
-                    <div class="card-body cambodia-content">
-                        <div class="flag-container">
-                             <img src="images/cambodia-flag.png" alt="Official Flag of Cambodia" width="192">
-                             <p class="flag-caption">Official Flag of Cambodia</p>
+                <!-- Left Column -->
+                <div class="left-column">
+
+                    <!-- About Me Card -->
+                    <section class="card">
+                        <h2 class="card-header">About Me</h2>
+                        <div class="card-body about-me-content">
+                            <p class="about-me-text">
+                                My name is Sambathrorth. I live in Cambodia. I work for NGO as the Program Manager of Inclusive Finance. I am married and have two daugters. 
+                                <img src="/images/sambathrorth.webp" width="100x" 
+                                     alt="Portrait of Sambathrorth">
                         </div>
-                        <p class="cambodia-text">Cambodia is a Southeast Asian nation... (rest of text)</p>
-                    </div>
-                </section>
+                    </section>
+                </div>
+                    
+
+                    <!-- Cambodia Card -->
+                    <section class="card">
+                        <div class="card-body">
+                            <h2 class="cambodia-title">My country</h2>
+                            <div class="cambodia-content">
+                                <!-- HTML/CSS Flag -->
+                                <div class="flag-container">
+                                    <img src="/images/cambodia-flag.png" width="100" 
+                                         alt="Flag of Cambodia">
+                                    <p class="flag-caption"></p>Official Flag of Cambodia</p>
+                                </div>
+                                
+                                <p class="cambodia-text">
+                                    Cambodia is a Southeast Asian nation whose landscape spans low-lying plains, the Mekong Delta, mountains and Gulf of Thailand coastline. Phnom Penh, its capital, is home to the art deco Central Market, glittering Royal Palace and the National Museum's historical and archaeological exhibits. In the country's northwest are the ruins of Angkor Wat, a massive stone temple complex built during the Khmer Empire.
+                            </div>
+                        </div>
+                    </section>
+
             </div>
 
-            <aside class="right-column">
-                <section class="card">
-                    <h2 class="card-header">Web Dev Resources</h2>
-                    <div class="card-body">
-                        <ul class="resources-list">
-                            <li><a href="https://dev.to">Dev.to Community</a></li>
-                            <li><a href="https://w3schools.com">W3 Schools</a></li>
-                        </ul>
-                    </div>
-                </section>
-            </aside>
+                <!-- Right Column (spans 1/3 width on desktop) -->
+                <aside class="right-column">
+                    <section class="card">
+                        <h2 class="card-header">Web Dev Resources</h2>
+                        <div class="card-body">
+                            <ul class="resources-list">
+                                <li><a href="#">Dev.to Community</a></li>
+                                <li><a href="#">Smashing Magazine</a></li>
+                                <li><a href="#">CSS Tricks</a></li>
+                                <li><a href="#">W3 Schools</a></li>
+                                <li><a href="#">Udemy</a></li>
+                                <li><a href="#">Image Placeholder</a></li>
+                            </ul>
+                        </div>
+                    </section>
+                </aside>
+
         </main>
 
+        <!-- Footer -->
         <footer class="site-footer">
             <p>&copy;2026 💎 Cambodia, Phnom Penh city 💎 Sambathrorth</p>
-        
-            <p id="lastModified"></p> 
+         
         </footer>
+
     </div>
 
-    
-    <script src="scripts/getdates.js" defer></script>
+    <!-- Link to external JavaScript file -->
+    <script src="/getdates.js" defer></script>
 </body>
 </html>
