@@ -12,7 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
             
                     if (navMenu.classList.contains('open')) {
                         menuButton.textContent = '×'; 
-                        menuButton.textContent = '☰'; 
+                    } else {
+                    menuButton.textContent = '☰';
                     }
                 });
             }
