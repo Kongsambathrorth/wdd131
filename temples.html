@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temple Album</title>
+    <meta name="description" content="W02 Assignment: A responsive temple picture album page.">
+    <meta name="author" content="[Your Name Here]">
+    <link rel="stylesheet" href="styles/temple.css">
+    <link rel="stylesheet" href="styles/temple-large.css">
+    <script src="scripts/temple.js" defer></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <div class="header-title">
+            Temple Album
+        </div>
+        <button id="menu-button">☰</button>
+        <nav>
+            <ul id="nav-menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Old</a></li>
+                <li><a href="#">New</a></li>
+                <li><a href="#">Large</a></li>
+                <li><a href="#">Small</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Temples</h1>
+        <div class="gallery">
+            <figure>
+                <img src="/images/montana.jpg" alt="Billing Montana Temple" loading="lazy">
+                <figcaption>Billing Monata Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="/images/chile.jpg" alt="Concepion Chile Temple" loading="lazy">
+                <figcaption>Concepion Chile Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="/images/idaho.jpg" alt="Boise Idaho Temple" loading="lazy">
+                <figcaption>Boise Idaho Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="/images/columblia.jpg" alt="Barranquilla Columblia Temple" loading="lazy">
+                <figcaption>Barranquilla Columblia Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="/images/nigeria.jpg" alt="Nigeria Temple" loading="lazy">
+                <figcaption>Nigeria Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="/images/brazil.jpg" alt="Brazil" loading="lazy">
+                <figcaption>Brazil Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="/images/switzerland.jpg" alt="Switzerland Temple" loading="lazy">
+                <figcaption>Switzerland Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="/images/chicago.jpg" alt="Chicago Temple" loading="lazy">
+                <figcaption>Chicago Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="/images/peru.jpg" alt="Peru Temple" loading="lazy">
+                <figcaption>Peru Temple</figcaption>
+            </figure>
+        </div>
+    </main>
+
+    <footer>
+        <p>
+            &copy; <span id="copyright-year"></span> &bull; Sambathrorth &bull; Cambodia
+        </p>
+        <p>
+            Last Modified: <span id="last-modified"></span>
+        </p>
+    </footer>
+</body>
+</html>
