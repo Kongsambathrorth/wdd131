@@ -37,21 +37,16 @@
     --poppins-thin: "Poppins", sans-serif;
     --poppins-thin-weight: 100;
 
-    /* these colors below should be chosen from among your palette colors above */
-    --headline-color-on-white: var(--primary-color-Rich-black);
-    /* headlines on a white background */
-    --headline-color-on-color: var(--accent3-color-Platinum);
-    /* headlines on a colored background */
-    --paragraph-color-on-white: var(--primary-color-Rich-black);
-    /* paragraph text on a white background */
-    --paragraph-color-on-color: var(--accent3-color);
-    /* paragraph text on a colored background */
-    --paragraph-background-color: var(--secondary-color-Oxford-Blue);
-    --nav-link-color: var(--accent3-color-Platinum);
-    --nav-background-color: var(--secondary-color-Oxford-Blue);
-    --nav-hover-link-color: var(--accent2-color-SilverLake-Blue);
-    --nav-hover-background-color: var(--primary-color-Rich-black);
-}
+    --headline-color-on-white: var(--eerie-black);
+    --headline-color-on-color: var(--platinum);
+    --paragraph-color-on-white: var(--onyx);
+    --paragraph-color-on-color: var(--antiflash-white);
+    --paragraph-background-color: var(--gunmetal);
+    --nav-link-color: var(--platinum);
+    --nav-background-color: var(--gunmetal);
+    --nav-hover-link-color: var(--powder-blue);
+    --nav-hover-background-color: var(--eerie-black);
+
 
 * {
     margin: 0;
