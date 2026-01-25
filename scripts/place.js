@@ -1,3 +1,5 @@
+const { copyrightYearElement } = require("./copyrightYearElement");
+
 document.addEventListener("DOMContentLoaded", function () {
     // Static values for temperature and wind speed
     const temperature = 31; // in °C
