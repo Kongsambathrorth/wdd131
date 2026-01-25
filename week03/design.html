@@ -9,11 +9,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/base.css">
+	<link rel="stylesheet" href="styles/base.css">
+	<style>
+		.announcement {
+			animation: scroll 10s linear infinite alternate;
+			overflow: hidden;
+			white-space: nowrap;
+		}
+		@keyframes scroll {
+			from { transform: translateX(0); }
+			to { transform: translateX(100%); }
+		}
+	</style>
 </head>
 <body>
   <header>
-	<marquee behavior="alternate" direction="right"><br>Join us for the ribbon cutting cermony at 🪲 The Lazy Bug!<br>Friday at 11:00 AM</marquee>
+	<div class="announcement"><br>Join us for the ribbon cutting cermony at 🪲 The Lazy Bug!<br>Friday at 11:00 AM</div>
 	<h1>Design Principles</h1>
   </header>
 <main>
