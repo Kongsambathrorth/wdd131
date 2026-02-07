@@ -9,6 +9,7 @@
             }
 
             nav {
+                display: flex;
                 position: static; 
                 background-color: transparent;
             }
