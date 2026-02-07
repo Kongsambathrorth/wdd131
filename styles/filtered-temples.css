@@ -76,7 +76,7 @@ header h1 {
 }
 
 .navigation {
-    display: flexbox;
+    display: flex;
     flex-direction: column;
     list-style: none;
     width: 100%;
