@@ -1,110 +1,104 @@
-// 1. Array of Objects (Requirement: Use objects/arrays)
+// 1. Data Object (Requirement: Use objects/arrays)
 const courseData = [
-    { id: "html1", title: "HTML Basics", xp: 10 },
-    { id: "css1", title: "Flexbox Fun", xp: 15 },
-    { id: "js1", title: "JS Variables", xp: 20 }
+    { id: "html-01", title: "HTML Semantic Tags", level: "Beginner", xp: 20 },
+    { id: "css-01", title: "Flexbox Layouts", level: "Beginner", xp: 25 },
+    { id: "js-01", title: "Understanding Objects", level: "Advanced", xp: 50 },
+    { id: "js-02", title: "LocalStorage API", level: "Advanced", xp: 40 }
 ];
 
-// 2. DOM Selection (Requirement: Selecting an element)
-const progressDisplay = document.querySelector("#progress-report");
+// --- INITIALIZATION ---
+document.addEventListener("DOMContentLoaded", () => {
+    // Determine which page we are on and run the relevant code
+    if (document.querySelector("#course-container")) {
+        displayLessons();
+    }
+    if (document.querySelector("#progress-report")) {
+        updateDashboard();
+    }
+    
+    setupFooter();
+    setupMenu();
+});
 
+// --- FUNCTION 1: MOBILE MENU (Requirement: Events & Branching) ---
+function setupMenu() {
+    const menuButton = document.querySelector("#menu-button");
+    const navList = document.querySelector("#nav-list");
+
+    menuButton.addEventListener("click", () => {
+        navList.classList.toggle("show");
+        menuButton.innerHTML = navList.classList.contains("show") ? "&times;" : "&#9776;";
+    });
+}
+
+// --- FUNCTION 2: LOCAL STORAGE LOGIC (Requirement: localStorage) ---
+function markAsComplete(lessonId) {
+    // Get existing data from localStorage or create an empty array
+    let completed = JSON.parse(localStorage.getItem("completedLessons")) || [];
+    
+    // Check if it's already there (Requirement: Conditional Branching)
+    if (!completed.includes(lessonId)) {
+        completed.push(lessonId);
+        // Save back to localStorage
+        localStorage.setItem("completedLessons", JSON.stringify(completed));
+        alert("Lesson marked as complete! XP added.");
+        
+        // If we're on the dashboard, update it immediately
+        if (document.querySelector("#progress-report")) {
+            updateDashboard();
+        }
+    } else {
+        alert("You have already completed this lesson!");
+    }
+}
+
+// --- FUNCTION 3: DASHBOARD UPDATE (Requirement: Template Literals) ---
 function updateDashboard() {
-    // 3. LocalStorage (Requirement: Use localStorage)
+    const progressArea = document.querySelector("#progress-report");
     const completed = JSON.parse(localStorage.getItem("completedLessons")) || [];
     
-    // 4. Array Method (Requirement: Use array methods)
-    const totalXP = completed.length * 10; 
-
-    // 5. Conditional Branching (Requirement: Use conditional branching)
-    let statusMsg = "";
-    if (completed.length === 0) {
-        statusMsg = "Start your first lesson today!";
-    } else if (completed.length < courseData.length) {
-        statusMsg = "Keep going! You're on a roll.";
-    } else {
-        statusMsg = "Master Level Achieved!";
-    }
-
-    // 6. Template Literals (Requirement: Exclusively use template literals)
-    progressDisplay.innerHTML = `
-        <div class="stats">
-            <p>Lessons Completed: <strong>${completed.length}</strong></p>
-            <p>Total XP: <strong>${totalXP}</strong></p>
-            <p><em>${statusMsg}</em></p>
+    // Requirement: Use Template Literals
+    progressArea.innerHTML = `
+        <div class="stats-box">
+            <h3>Your Progress</h3>
+            <p>Lessons Finished: <strong>${completed.length}</strong></p>
+            <p>Status: ${completed.length >= 3 ? "Master" : "Novice"}</p>
         </div>
     `;
 }
 
-// 7. Event Listener (Requirement: Listening/reacting to events)
-// This would be called when a user clicks a 'Complete' button
-function markAsComplete(lessonId) {
-    let completed = JSON.parse(localStorage.getItem("completedLessons")) || [];
-    
-    if (!completed.includes(lessonId)) {
-        completed.push(lessonId);
-        localStorage.setItem("completedLessons", JSON.stringify(completed));
-        updateDashboard();
-    }
-}
+// --- FUNCTION 4: DYNAMIC CARDS (Requirement: Array Methods) ---
 
-// Function 1: Generate the HTML for the courses
-function displayLessons(filter = "all") {
+function displayLessons(filter = 'all') { // Add the filter parameter
     const container = document.querySelector("#course-container");
-    container.innerHTML = ""; // Clear existing content
+    container.innerHTML = "";
+    const filteredData = filter === 'all' 
+        ? courseData 
+        : courseData.filter(course => course.level === filter);
 
-    // Use an Array Method (Requirement: Array methods)
-    let filteredLessons = courseData;
-    if (filter !== "all") {
-        filteredLessons = courseData.filter(course => course.level === filter);
-    }
-
-    // Loop through the array to build the UI
-    filteredLessons.forEach(course => {
-        // Requirement: Exclusively use Template Literals for output
-        const card = `
-            <section class="card">
-                <h3>${course.title}</h3>
-                <p>XP Value: <span>${course.xp}</span></p>
-                <p>Level: ${course.level}</p>
-                <button onclick="markAsComplete('${course.id}')" class="btn-complete">
-                    Mark as Finished
-                </button>
-            </section>
+    filteredData.forEach(course => {
+        const card = document.createElement("section");
+        card.className = "card";
+        // Requirement: Template Literals
+        card.innerHTML = `
+            <h3>${course.title}</h3>
+            <p>Level: ${course.level}</p>
+            <p>Points: ${course.xp} XP</p>
+            <button class="complete-btn" data-id="${course.id}">Complete Lesson</button>
         `;
-        
-        // Requirement: DOM Interaction (modifying the element)
-        container.innerHTML += card;
+        container.appendChild(card);
+    });
+
+    // Add event listeners to the new buttons
+    document.querySelectorAll(".complete-btn").forEach(btn => {
+        btn.addEventListener("click", (e) => {
+            markAsComplete(e.target.dataset.id);
+        });
     });
 }
 
-// Function 2: Toggle Mobile Menu
-const menuButton = document.querySelector("#menu-button");
-const navList = document.querySelector("#nav-list");
-
-menuButton.addEventListener("click", () => {
-    // Requirement: DOM Interaction (modifying an element's class)
-    navList.classList.toggle("show");
-    
-    // Requirement: Conditional Branching
-    if (navList.classList.contains("show")) {
-        menuButton.innerHTML = "&times;"; // Change to 'X'
-    } else {
-        menuButton.innerHTML = "&#9776;"; // Change back to Hamburger
-    }
-});
-
-// Function 3: Update Footer Dates
+// --- FUNCTION 5: FOOTER (Standard requirement) ---
 function setupFooter() {
-    const yearSpan = document.querySelector("#currentyear");
-    const lastModSpan = document.querySelector("#lastModified");
-
-    // Requirement: Use a Template Literal
-    const now = new Date();
-    yearSpan.textContent = `${now.getFullYear()}`;
-
-    // Requirement: DOM Interaction (modifying element text)
-    lastModSpan.textContent = document.lastModified;
+    document.querySelector("#currentyear").textContent = new Date().getFullYear();
+    document.querySelector("#lastModified").textContent = `Last Modified: ${document.lastModified}`;
 }
-
-// Call the function on page load
-setupFooter();
