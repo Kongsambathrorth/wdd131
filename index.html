@@ -1,80 +1,42 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WDD 131: Dynamic Web Fundamentals - Sambathrorth Kong</title>
-    <meta name="description" content="Explore the core principles of Dynamic Web Fundamentals. This site features course assignments and projects created by Sambathrorth Kong for WDD 131.">
-    <meta name="author" content="Sambathrorth Kong">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/base.css">
+    <title>Dashboard | MicroLearn LMS</title>
+    <meta name="description" content="Track your micro-learning progress and master new skills.">
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="scripts/main.js" defer></script>
 </head>
 <body>
     <header>
-        <h1><span id="course-title">WDD 131: Dynamic Web Fundamentals</span></h1>
+        <div class="logo">🚀 MicroLearn</div>
+        <button id="menu-button" aria-label="Toggle Menu">&#9776;</button>
         <nav>
-            <ul class="main-nav">
-                <li><a href="https://www.linkedin.com/in/sambathrorth/">LinkedIn</a></li>
-                <li><a href="https://byupw.instructure.com/">Canvas</a></li>
-                <li><a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/2-ne/1?lang=eng">Scripture</a></li>
-                <li><a href="https://github.com/Kongsambathrorth/wdd131">Final Project</a></li>
+            <ul id="nav-list">
+                <li><a href="index.html" class="active">Dashboard</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="form.html">Join Us</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <h1>WDD 131 - Dynamic Web Fundamentals</h1>
+        <h1>Welcome to Your Dashboard</h1>
+        <section id="progress-report" class="card">
+            <p>Loading your progress...</p>
+        </section>
         
-        <div class="main-content-grid">
-            <section class="card">
-                <h2 class="card-header">About Me</h2>
-                <div class="card-body about-me-content">
-                    <p class="about-me-text">
-                        My name is Sambathrorth. I live in Cambodia. I work for an NGO as the Program Manager of Inclusive Finance. I am married and have two daughters.
-                    </p> 
-                    <img src="images/sambathrorth.webp" width="200" alt="Portrait of Sambathrorth">
-                </div>
-            </section>
-
-            <section class="card">
-                <div class="card-body">
-                    <h2 class="cambodia-title">My Country</h2>
-                    <div class="cambodia-content">
-                        <div class="flag-container">
-                            <img src="images/cambodia-flag.png" width="200" alt="Flag of Cambodia">
-                            <p class="flag-caption">Official Flag of Cambodia</p>
-                        </div>
-                        <p class="cambodia-text">
-                            Cambodia is a Southeast Asian nation whose landscape spans low-lying plains, the Mekong Delta, mountains and Gulf of Thailand coastline. Phnom Penh, its capital, is home to the art deco Central Market and glittering Royal Palace.
-                        </p>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <aside class="right-column">
-            <section class="card">
-                <h2 class="card-header">Web Dev Resources</h2>
-                <div class="card-body">
-                    <ul class="resources-list">
-                        <li><a href="https://dev.to/">Dev.to Community</a></li>
-                        <li><a href="https://www.smashingmagazine.com/">Smashing Magazine</a></li>
-                        <li><a href="https://css-tricks.com/">CSS Tricks</a></li>
-                        <li><a href="https://www.w3schools.com/">W3 Schools</a></li>
-                        <li><a href="https://www.udemy.com/">Udemy</a></li>
-                    </ul>
-                </div>
-            </section>
-        </aside>
+        <section class="hero">
+            <h2>Start Small, Learn Big</h2>
+            <p>Bite-sized lessons designed for busy schedules.</p>
+            <img src="images/hero-study.webp" alt="Person studying" loading="lazy" width="600" height="400">
+        </section>
     </main>
 
     <footer>
-        <p>&copy;<span id="currentyear"></span> 💎 Cambodia, Phnom Penh city 💎 Sambathrorth Kong</p>
-        <p id="lastModified"></p>
+        <p>&copy; <span id="currentyear"></span> | Your Name | <a href="references.html">References</a></p>
+        <p>Last Modified: <span id="lastModified"></span></p>
     </footer>
-
-    <script src="scripts/getdates.js" defer></script>
 </body>
 </html>

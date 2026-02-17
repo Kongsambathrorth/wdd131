@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses | MicroLearn LMS</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="scripts/main.js" defer></script>
+</head>
+<body>
+    <header>...</header> <main>
+        <h1>Available Micro-Lessons</h1>
+        <div class="filter-controls">
+            <button onclick="displayLessons('all')">All</button>
+            <button onclick="displayLessons('Beginner')">Beginner</button>
+            <button onclick="displayLessons('Advanced')">Advanced</button>
+        </div>
+        
+        <div id="course-container" class="lesson-grid"></div>
+    </main>
+
+<footer>
+    <p>&copy; <span id="currentyear"></span> | MicroLearn LMS Project | Your Name</p>
+    <p>Last Modified: <span id="lastModified"></span></p>
+    <nav class="footer-nav">
+        <a href="references.html">Project References</a>
+    </nav>
+</footer> 
+
+</body>
+</html>
