@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard | MicroLearn LMS</title>
-    <meta name="description" content="Track your micro-learning progress and master new skills.">
+    <title>Thank You | MicroLearn LMS</title>
     <link rel="stylesheet" href="./styles/main.css">
     <script src="./scripts/main.js" defer></script>
 </head>
@@ -14,7 +13,7 @@
         <button id="menu-button" aria-label="Toggle Menu">&#9776;</button>
         <nav>
             <ul id="nav-list">
-                <li><a href="index.html" class="active">Dashboard</a></li>
+                <li><a href="index.html">Dashboard</a></li>
                 <li><a href="courses.html">Courses</a></li>
                 <li><a href="form.html">Join Us</a></li>
             </ul>
@@ -22,21 +21,26 @@
     </header>
 
     <main>
-        <h1>Welcome to Your Dashboard</h1>
-        <section id="progress-report" class="card">
-            <p>Thank you</p>
-        </section>
-        
-        <section class="hero">
-            <h2>Start Small, Learn Big</h2>
-            <p>Bite-sized lessons designed for busy schedules.</p>
-            <img src="images/hero-study.webp" alt="Person studying" loading="lazy" width="600" height="400">
-        </section>
+        <div class="card" style="text-align: center; margin-top: 3rem;">
+            <h1>Thank You for Enrolling!</h1>
+            <p id="thanks-message">We are excited to have you start your micro-learning journey.</p>
+            <p>You can now head over to the courses page to start your first "Knowledge Burst."</p>
+            <a href="courses.html" class="btn-submit" style="display: inline-block; text-decoration: none; width: auto; margin-top: 1rem;">View Courses</a>
+        </div>
     </main>
 
     <footer>
         <p>&copy; <span id="currentyear"></span> | Your Name | <a href="references.html">References</a></p>
         <p>Last Modified: <span id="lastModified"></span></p>
     </footer>
+
+    <script>
+        // Optional extra JS to show the user's name from the form submission
+        const urlParams = new URLSearchParams(window.location.search);
+        const firstName = urlParams.get('fname');
+        if (firstName) {
+            document.querySelector('#thanks-message').textContent = `Welcome, ${firstName}! We are excited to have you start your journey.`;
+        }
+    </script>
 </body>
 </html>

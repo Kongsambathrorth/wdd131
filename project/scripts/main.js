@@ -8,10 +8,13 @@ const courseData = [
 
 // --- INITIALIZATION ---
 document.addEventListener("DOMContentLoaded", () => {
-    // Determine which page we are on and run the relevant code
-    if (document.querySelector("#course-container")) {
-        displayLessons();
+    // 2. Setup Page Specific Logic (Requirement: DOM interaction)
+    const courseContainer = document.querySelector("#course-container");
+    if (courseContainer) {
+        displayLessons("all");
+        setupFilters(); // New function to handle filter button clicks
     }
+
     if (document.querySelector("#progress-report")) {
         updateDashboard();
     }
@@ -25,71 +28,79 @@ function setupMenu() {
     const menuButton = document.querySelector("#menu-button");
     const navList = document.querySelector("#nav-list");
 
-    menuButton.addEventListener("click", () => {
-        navList.classList.toggle("show");
-        menuButton.innerHTML = navList.classList.contains("show") ? "&times;" : "&#9776;";
+    if (menuButton && navList) {
+        menuButton.addEventListener("click", () => {
+            navList.classList.toggle("show");
+            // Requirement: Conditional Branching & Template Literals
+            menuButton.innerHTML = navList.classList.contains("show") ? `&times;` : `&#9776;`;
+        });
+    }
+}
+
+// --- FUNCTION 2: FILTER LOGIC (Requirement: Events & DOM selection) ---
+function setupFilters() {
+    const filterButtons = document.querySelectorAll(".filter-controls button");
+    filterButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            // Passes the text (All, Beginner, Advanced) to the display function
+            displayLessons(button.textContent.toLowerCase());
+        });
     });
 }
 
-// --- FUNCTION 2: LOCAL STORAGE LOGIC (Requirement: localStorage) ---
+// --- FUNCTION 3: LOCAL STORAGE (Requirement: localStorage & Branching) ---
 function markAsComplete(lessonId) {
-    // Get existing data from localStorage or create an empty array
     let completed = JSON.parse(localStorage.getItem("completedLessons")) || [];
     
-    // Check if it's already there (Requirement: Conditional Branching)
     if (!completed.includes(lessonId)) {
         completed.push(lessonId);
-        // Save back to localStorage
         localStorage.setItem("completedLessons", JSON.stringify(completed));
-        alert("Lesson marked as complete! XP added.");
+        alert(`Lesson ${lessonId} marked as complete!`);
         
-        // If we're on the dashboard, update it immediately
         if (document.querySelector("#progress-report")) {
             updateDashboard();
         }
     } else {
-        alert("You have already completed this lesson!");
+        alert(`You have already completed this lesson!`);
     }
 }
 
-// --- FUNCTION 3: DASHBOARD UPDATE (Requirement: Template Literals) ---
+// --- FUNCTION 4: DASHBOARD (Requirement: Template Literals & Branching) ---
 function updateDashboard() {
     const progressArea = document.querySelector("#progress-report");
     const completed = JSON.parse(localStorage.getItem("completedLessons")) || [];
     
-    // Requirement: Use Template Literals
+    // Requirement: Exclusively use template literals for HTML output
     progressArea.innerHTML = `
         <div class="stats-box">
             <h3>Your Progress</h3>
             <p>Lessons Finished: <strong>${completed.length}</strong></p>
-            <p>Status: ${completed.length >= 3 ? "Master" : "Novice"}</p>
+            <p>Status: ${completed.length >= 3 ? `Master` : `Novice`}</p>
         </div>
     `;
 }
 
-// --- FUNCTION 4: DYNAMIC CARDS (Requirement: Array Methods) ---
-
-function displayLessons(filter = 'all') { // Add the filter parameter
+// --- FUNCTION 5: DYNAMIC CARDS (Requirement: Array Methods & Template Literals) ---
+function displayLessons(filter = 'all') {
     const container = document.querySelector("#course-container");
-    container.innerHTML = "";
+    if (!container) return;
+
+    // Requirement: Use Array Filter method
     const filteredData = filter === 'all' 
         ? courseData 
-        : courseData.filter(course => course.level === filter);
+        : courseData.filter(course => course.level.toLowerCase() === filter);
 
-    filteredData.forEach(course => {
-        const card = document.createElement("section");
-        card.className = "card";
-        // Requirement: Template Literals
-        card.innerHTML = `
+    // Requirement: Use Array Map method and Template Literals for string building
+    container.innerHTML = filteredData.map(course => `
+        <section class="card">
             <h3>${course.title}</h3>
             <p>Level: ${course.level}</p>
             <p>Points: ${course.xp} XP</p>
             <button class="complete-btn" data-id="${course.id}">Complete Lesson</button>
-        `;
-        container.appendChild(card);
-    });
+        </section>
+    `).join('');
 
-    // Add event listeners to the new buttons
+    // Re-attach event listeners to buttons generated dynamically
     document.querySelectorAll(".complete-btn").forEach(btn => {
         btn.addEventListener("click", (e) => {
             markAsComplete(e.target.dataset.id);
@@ -97,8 +108,14 @@ function displayLessons(filter = 'all') { // Add the filter parameter
     });
 }
 
-// --- FUNCTION 5: FOOTER (Standard requirement) ---
+// --- FUNCTION 6: FOOTER (Requirement: Template Literals) ---
 function setupFooter() {
-    document.querySelector("#currentyear").textContent = new Date().getFullYear();
-    document.querySelector("#lastModified").textContent = `Last Modified: ${document.lastModified}`;
+    const yearSpan = document.querySelector("#currentyear");
+    const modifiedSpan = document.querySelector("#lastModified");
+    
+    if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+    if (modifiedSpan) {
+        // Requirement: Use Template Literals for output strings
+        modifiedSpan.textContent = `Last Modified: ${document.lastModified}`;
+    }
 }
