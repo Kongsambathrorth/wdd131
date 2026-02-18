@@ -137,3 +137,31 @@ select {
 .btn-submit:hover {
     background-color: #d35400;
 }
+
+/* Responsive Video Embeds */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+    margin: 1.5rem 0;
+    border-radius: 8px;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Nav Active State (PARC: Contrast) */
+nav a.active {
+    border-bottom: 3px solid #e67e22; /* Your accent color */
+    padding-bottom: 5px;
+}
+
