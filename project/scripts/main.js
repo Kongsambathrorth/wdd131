@@ -1,9 +1,9 @@
 // 1. Data Object
 const courseData = [
-    { id: "html-01", title: "HTML Semantic Tags", level: "Beginner", xp: 20 },
-    { id: "css-01", title: "Flexbox Layouts", level: "Beginner", xp: 25 },
-    { id: "js-01", title: "Understanding Objects", level: "Advanced", xp: 50 },
-    { id: "js-02", title: "LocalStorage API", level: "Advanced", xp: 40 }
+    { id: "html-01", title: "Leadership", level: "Beginner", xp: 2 },
+    { id: "css-01", title: "Communication", level: "Beginner", xp: 2 },
+    { id: "js-01", title: "Time management", level: "Advanced", xp: 4 },
+    { id: "js-02", title: "HR management", level: "Advanced", xp: 4 }
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
