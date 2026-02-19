@@ -7,6 +7,7 @@
     --bg-color: #f4f4f4;
 }
 
+/* Base Styles moved from embedded block [cite: 96] */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
@@ -39,6 +40,7 @@ h1, h2, h3 {
 section {
     margin-bottom: 30px;
     padding: 10px 0;
+    border-bottom: 1px solid #ccc; /* Restored from HTML styles */
 }
 
 /* Color Palette Display */
@@ -62,14 +64,17 @@ section {
     border: 1px solid #ccc;
 }
 
-/* Typography section styling */
+/* Classes to replace inline styles [cite: 89] */
+.primary-bg { background-color: var(--primary-color); }
+.secondary-bg { background-color: var(--secondary-color); }
+.accent-bg { background-color: var(--accent-color); }
+
 .font-example {
     background: #eee;
     padding: 15px;
     border-left: 5px solid var(--secondary-color);
 }
 
-/* Wireframe placeholder styling */
 .wireframe-placeholder {
     background: #e0e0e0;
     border: 2px dashed #999;
