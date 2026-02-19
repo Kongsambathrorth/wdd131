@@ -4,7 +4,7 @@
     --secondary-color: #9a8c98;
     --background-color: #f2e9e4;
     --text-color: #22223b;
-    --highlight-color: #c9ada7;
+    --highlight-color: orange;
     --hover-color: orange;
 
     --primary-color-rich-black: #0D1B2A;
@@ -52,7 +52,7 @@ header {
     margin-bottom: 20px;
     background-color: var(--headline-color-on-white);
     color: var(--background-color);
-    font-size: 14px;
+    padding: 1rem;
 }
 
 form {
@@ -69,7 +69,7 @@ form {
 }
 
 label {
-    display: inline;
+    display: block;
     margin-bottom: 8px;
     font-weight: bold;
     color: var(--primary-color-rich-black);
@@ -78,9 +78,7 @@ label {
 select,
 input[type="date"],
 textarea,
-input[type="text"],
-input[type="radio"],
-input[type="checkbox"] {
+input[type="text"] {
     width: 100%;
     padding: 8px;
     margin-top: 4px;
@@ -90,14 +88,15 @@ input[type="checkbox"] {
 }
 
 fieldset {
-    border: none;
-    padding: 0;
+    border: 1px solid #ddd;
+    padding: 10px;
     margin-bottom: 16px;
+    border-radius: 4px;
 }
 
+/* FIXED: Added missing closing brace and ensured only one color declaration */
 legend {
     font-weight: bold;
-    color: var(--primary-color);
     margin-bottom: 8px;
     color: var(--primary-color-rich-black);
 }
@@ -106,11 +105,6 @@ input[type="radio"],
 input[type="checkbox"] {
     width: auto;
     margin-right: 8px;
-    
-}
-
-.features {
-    font-size: 14px;
 }
 
 input[type="submit"] {
@@ -122,52 +116,43 @@ input[type="submit"] {
     cursor: pointer;
     font-size: 16px;
     margin-top: 16px;
-    text-align: center;
+    width: 100%;
 }
 
 input[type="submit"]:hover {
-    background-color: var(--highlight-color);
+    background-color: var(--primary-color);
 }
 
 textarea {
     height: 100px;
+    resize: vertical;
 }
 
 /* Rating styles */
 .rating-box {
-    max-width: 100%;
-    margin: 10px auto;
-    padding: 10px;
-    border: 1px solid #d9d9d9;
+    border: 1px solid #ddd;
 }
 
-.rating-box p {
+.rating-box .clasificacion {
+    direction: rtl;
+    unicode-bidi: bidi-override;
     text-align: left;
-    font-size: 20px;
-    margin-left: 15px;
+}
+
+.rating-box label {
+    display: inline-block;
+    color: #ccc;
+    font-size: 2rem;
+    cursor: pointer;
 }
 
 .rating-box input[type="radio"] {
     display: none;
 }
 
-.rating-box label {
-    color: var(--accent2-color-silverlake-blue);
-    font-size: 2rem;
-    border-radius: 1px solid var(--primary-color-rich-black);
-}
-
-.rating-box .clasificacion {
-    direction: rtl;
-    unicode-bidi: bidi-override;
-}
-
 .rating-box label:hover,
-.rating-box label:hover~label {
-    color: var(--hover-color);
-}
-
-.rating-box input[type="radio"]:checked~label {
+.rating-box label:hover ~ label,
+.rating-box input[type="radio"]:checked ~ label {
     color: var(--hover-color);
 }
 
@@ -176,5 +161,6 @@ footer {
     background-color: var(--nav-background-color);
     color: var(--headline-color-on-color);
     text-align: center;
-    padding: 1rem;
+    padding: 1.5rem;
+    margin-top: 20px;
 }
