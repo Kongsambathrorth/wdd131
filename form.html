@@ -1,56 +1,62 @@
 <!DOCTYPE html>
 <html lang="en-US">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Review</title>
     <meta name="description" content="Use our official Product Review Form to rate your recent purchase. Share detailed feedback and feature ratings to help us improve your experience.">
-    <meta name="author" content="Your Sambathrorth Kong">
+    <meta name="author" content="Sambathrorth Kong">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="styles/form.css">
-
     <script src="scripts/form.js" defer></script>
 </head>
+<body> <header>
+        <h1>Product Review Form</h1> 
+    </header>
 
-<header>
-    <h1>Product Review Form</h1> 
-</header>
-
-<main>
-    <form method="get" action="review.html">
-        <div class="form-group">
-            <label for="product-name">Product Name</label>
-            <select id="product-name" name="product-name" required>
-                <option value="" disabled selected>Select a Product ...</option>
-            </select>
-        </div>
-
-        <fieldset class="form-group">
-            <legend>Overall Rating</legend>
-            <div class="rating-box" id="overall-rating">
-                <div class="clasificacion">
-                    <input id="radio1" type="radio" name="estrellas" value="5" required>
-                    <label for="radio1">&#9733;</label>
-                    
-                    <input id="radio2" type="radio" name="estrellas" value="4" required>
-                    <label for="radio2">&#9733;</label>
-                    
-                    <input id="radio3" type="radio" name="estrellas" value="3" required>
-                    <label for="radio3">&#9733;</label>
-                    
-                    <input id="radio4" type="radio" name="estrellas" value="2" required>
-                    <label for="radio4">&#9733;</label>
-                    
-                    <input id="radio5" type="radio" name="estrellas" value="1" required>
-                    <label for="radio5">&#9733;</label>
-                </div>
+    <main>
+        <form method="get" action="review.html">
+            <div class="form-group">
+                <label for="product-name">Product Name</label>
+                <select id="product-name" name="product-name" required>
+                    <option value="" disabled selected>Select a Product ...</option>
+                </select>
             </div>
-        </fieldset>
+
+            <fieldset class="form-group">
+                <legend>Overall Rating</legend>
+                <div class="rating-box" id="overall-rating">
+                    <div class="clasificacion">
+                        <input id="radio1" type="radio" name="estrellas" value="5" required>
+                        <label for="radio1">&#9733;</label>
+                        <input id="radio2" type="radio" name="estrellas" value="4" required>
+                        <label for="radio2">&#9733;</label>
+                        <input id="radio3" type="radio" name="estrellas" value="3" required>
+                        <label for="radio3">&#9733;</label>
+                        <input id="radio4" type="radio" name="estrellas" value="2" required>
+                        <label for="radio4">&#9733;</label>
+                        <input id="radio5" type="radio" name="estrellas" value="1" required>
+                        <label for="radio5">&#9733;</label>
+                    </div>
+                </div>
+            </fieldset>
+
+            <div class="form-group">
+                <label for="install-date">Date of Installation</label>
+                <input type="date" id="install-date" name="install-date" required>
+            </div>
+
+            <fieldset class="form-group">
+                <legend>Which features did you find useful? (Check all that apply)</legend>
+                <label><input type="checkbox" name="features" value="durability"> Durability</label>
+                <label><input type="checkbox" name="features" value="ease"> Ease of Use</label>
+                <label><input type="checkbox" name="features" value="performance"> Performance</label>
+                <label><input type="checkbox" name="features" value="design"> Design</label>
+            </fieldset>
 
             <div class="form-group">
                 <label for="written-review">Written Review (Optional)</label>
@@ -65,6 +71,7 @@
             <input type="submit" value="Post Review">
         </form>
     </main>
+
     <footer>
         <p>&copy;<span id="currentyear"></span> - Sambathrorth Kong</p>
         <p id="lastModified"></p>
