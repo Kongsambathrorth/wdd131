@@ -31,3 +31,19 @@ if (productSelect) {
         productSelect.appendChild(option);
     });
 }
+
+
+const reviewsDisplay = document.querySelector("#review-count");
+
+
+let numReviews = Number(window.localStorage.getItem("numReviews-ls")) || 0;
+
+
+numReviews++;
+
+window.localStorage.setItem("numReviews-ls", numReviews);
+
+
+if (reviewsDisplay) {
+    reviewsDisplay.textContent = numReviews;
+}
