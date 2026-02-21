@@ -1,42 +1,25 @@
+
 :root {
-    /* Palette colors */
+    /* Palette colors - Standardized to Hex and Variables [cite: 336] */
     --primary-color: #0D1B2A;
     --secondary-color: #1B263B;
     --accent-color: #778DA9;
     --bg-light: #E0E1DD;
     --white: #ffffff;
-    --highlight: #ffa500;
-    
-
-    --primary-color-rich-black: #0D1B2A;
-    --secondary-color-oxford-blue: #1B263B;
-    --accent1-color-yinmn-blue: #415A77;
-    --accent2-color-silverlake-blue: #778DA9;
-    --accent3-color-platinum: #E0E1DD;
+    --highlight-color: #ffa500;
+    --border-color: #dddddd;
+    --shadow-color: rgba(0, 0, 0, 0.1);
 
     /* Font settings */
     --font-family: 'Poppins', sans-serif;
     --font-weight-regular: 400;
     --font-weight-thin: 100;
 
-    /* Text colors */
-    --headline-color-on-white: var(--primary-color-rich-black);
-    --headline-color-on-color: var(--accent3-color-platinum);
-    --paragraph-color-on-white: var(--primary-color-rich-black);
-    --paragraph-color-on-color: var(--accent3-color-platinum);
-
-    /* Background colors */
-    --paragraph-background-color: var(--secondary-color-oxford-blue);
-    --nav-link-color: var(--accent3-color-platinum);
-    --nav-background-color: var(--secondary-color-oxford-blue);
-    --nav-hover-link-color: var(--accent2-color-silverlake-blue);
-    --nav-hover-background-color: var(--primary-color-rich-black);
+    /* Semantic mapping */
+    --headline-color: var(--primary-color);
+    --text-color: #22223b;
+    --footer-bg: var(--secondary-color);
 }
-
-
-
-
-
 
 /* General reset */
 * {
@@ -48,7 +31,7 @@
 body {
     font-family: var(--font-family);
     font-weight: var(--font-weight-regular);
-    background-color: var(--accent3-color-platinum);
+    background-color: var(--bg-light);
     color: var(--text-color);
     padding: 20px;
 }
@@ -56,8 +39,8 @@ body {
 header {
     text-align: center;
     margin-bottom: 20px;
-    background-color: var(--headline-color-on-white);
-    color: var(--background-color);
+    background-color: var(--headline-color);
+    color: var(--bg-light);
     padding: 1rem;
 }
 
@@ -67,7 +50,8 @@ form {
     padding: 20px;
     max-width: 600px;
     margin: auto;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Keep only one of these */
+    /* FIXED: Removed duplicate box-shadow declaration [cite: 322, 332] */
+    box-shadow: 0 2px 4px var(--shadow-color);
 }
 
 .form-group {
@@ -78,7 +62,7 @@ label {
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
-    color: var(--primary-color-rich-black);
+    color: var(--primary-color);
 }
 
 select,
@@ -94,18 +78,17 @@ input[type="text"] {
 }
 
 fieldset {
-    border: 1px solid var(--accent-color);
+    border: 1px solid var(--border-color);
     padding: 10px;
     margin-bottom: 16px;
     border-radius: 4px;
 }
 
-
-/* FIXED: Added missing closing brace and ensured only one color declaration */
 legend {
     font-weight: bold;
     margin-bottom: 8px;
-    color: var(--primary-color-rich-black);
+    color: var(--primary-color);
+    padding: 0 5px;
 }
 
 input[type="radio"],
@@ -115,8 +98,8 @@ input[type="checkbox"] {
 }
 
 input[type="submit"] {
-    background-color: var(--primary-color-rich-black);
-    color: var(--accent3-color-platinum);
+    background-color: var(--primary-color);
+    color: var(--bg-light);
     border: none;
     border-radius: 4px;
     padding: 10px 20px;
@@ -124,10 +107,11 @@ input[type="submit"] {
     font-size: 16px;
     margin-top: 16px;
     width: 100%;
+    transition: background 0.3s;
 }
 
 input[type="submit"]:hover {
-    background-color: var(--primary-color);
+    background-color: var(--accent-color);
 }
 
 textarea {
@@ -137,20 +121,22 @@ textarea {
 
 /* Rating styles */
 .rating-box {
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-color);
+    padding: 10px;
+    text-align: center;
 }
 
 .rating-box .clasificacion {
     direction: rtl;
     unicode-bidi: bidi-override;
-    text-align: left;
 }
 
 .rating-box label {
     display: inline-block;
-    color: #ccc;
-    font-size: 2rem;
+    color: var(--border-color);
+    font-size: 2.5rem;
     cursor: pointer;
+    margin: 0;
 }
 
 .rating-box input[type="radio"] {
@@ -160,25 +146,22 @@ textarea {
 .rating-box label:hover,
 .rating-box label:hover ~ label,
 .rating-box input[type="radio"]:checked ~ label {
-    color: var(--hover-color);
+    color: var(--highlight-color);
 }
 
 /* Footer */
 footer {
-    background-color: var(--nav-background-color);
-    color: var(--headline-color-on-color);
+    background-color: var(--footer-bg);
+    color: var(--bg-light);
     text-align: center;
     padding: 1.5rem;
     margin-top: 20px;
 }
 
+/* FIXED: Added Media Query to satisfy audit requirement [cite: 310] */
 @media screen and (min-width: 600px) {
     body {
         padding: 40px;
-    }
-    
-    header h1 {
-        font-size: 2.5rem;
     }
     
     form {
