@@ -7,7 +7,7 @@
     <meta name="description" content="WDD 131 | Dynamic Web Fundamentals|Sambathrorth|This page is the first assignment of the course.">
     <meta name="author" content="Sambathrorth">   
     <link rel="stylesheet" href="styles/base.css">
-   <script src="scripts/getDates.js" defer></script>
+    <script src="scripts/getdates.js" defer></script>
 
 </head>
 <body>
@@ -25,15 +25,26 @@
 
 
     <main>
-        <h1>Sambathrorth</h1>
-        <section class="card">
+<section class="card">
     <h2>About Me</h2>
-    <p>My name is Sambathrorth Kong and I am from Kandal Province, Cambodia. I enjoy web development and learning new technologies.</p>
-    <img src="images/profile.jpg" alt="Sambathrorth's Profile Picture" width="150" height="180">
-    
-    <h3>Takhmau, Kandal</h3>
-    <img src="images/flag.png" alt="Official Flag" width="100" height="60">
-    <p>Takhmau is the capital city of Kandal Province in central Cambodia, situated just south of Phnom Penh.</p>
+
+    <!-- BLOCK 1: Bio & Profile Picture -->
+    <div class="card-block top-block">
+        <p>My name is Sambathrorth Kong and I am from Kandal Province, Cambodia. I enjoy web development and learning new technologies. I have two daughter who have returned from the mission and I am very proud of them. I also enjoy reading and learning new things. I am currently learning web development and I am excited to continue learning and growing in this field.</p>
+        <img src="images/profile.jpg" alt="Sambathrorth's Profile Picture" class="profile-img">
+    </div>
+
+    <!-- BLOCK 2: Location Header, Flag & Description -->
+    <div class="card-block bottom-block">
+        <h3>Takhmau, Kandal</h3>
+        <div class="location-content">
+            <figure>
+                <img src="images/cambodia-flag.png" alt="Official Flag" class="flag-img">
+                <figcaption>Official Flag of Cambodia</figcaption>
+            </figure>
+            <p>Takhmau is the capital city of Kandal Province in central Cambodia, situated just south of Phnom Penh.</p>
+        </div>
+    </div>
 </section>
 
 <section class="card">
