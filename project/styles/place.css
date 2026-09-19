@@ -1,0 +1,92 @@
+:root {
+  --primary-color: #009c3b; /* Verde da bandeira do Brasil */
+  --secondary-color: #ffdf00; /* Amarelo da bandeira do Brasil */
+  --background-color: #002776; /* Azul da bandeira do Brasil */
+  --text-color: #ffffff; /* Branco para texto */
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+header {
+  background-color: var(--primary-color);
+  padding: 1rem;
+  text-align: center;
+  color: white;
+}
+
+.hero {
+  text-align: center;
+  max-width: 840px;
+  margin: 0 auto;
+}
+
+.weather {
+  padding: 1rem;
+  background-color: var(--secondary-color);
+  color: var(--background-color);
+  float: right;
+  align-items: center;
+}
+
+.weather-details {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.weather-icon {
+  width: 30px;
+}
+
+.attractions {
+  padding: 1rem;
+}
+ul {
+  padding: 7px;
+}
+ul li {
+  list-style-type: none;
+  padding: 3px;
+}
+footer {
+  background-color: var(--primary-color);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  position: relative;
+}
+footer::after {
+  content: "Thanks for visiting!";
+  display: block;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  color: var(--secondary-color);
+}
+
+img {
+  width: 800px;
+  height: auto;
+  position: relative;
+}
+.grid {
+  max-width: 840px;
+  margin: 0 auto;
+}
+@media (max-width: 600px) {
+  .weather-details {
+    flex-direction: column;
+  }
+  img {
+    width: 90%;
+  }
+}
