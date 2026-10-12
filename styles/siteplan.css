@@ -48,3 +48,27 @@ img {
   border: 1px solid #ccc;
   border-radius: 5px;
 }
+
+.color-box {
+  padding: 10px;
+  margin-bottom: 5px;
+  color: #fff;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.primary-swatch {
+  background-color: #0F172A;
+}
+
+.secondary-swatch {
+  background-color: #2563EB;
+}
+
+.font-heading-sample {
+  font-family: 'Outfit', sans-serif;
+}
+
+.font-body-sample {
+  font-family: 'Inter', sans-serif;
+}
